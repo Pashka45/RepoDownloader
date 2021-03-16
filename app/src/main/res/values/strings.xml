@@ -25,4 +25,5 @@
     <string name="glide">Glide</string>
     <string name="load_app">LoadApp</string>
     <string name="retrofit">Retrofit</string>
+    <string name="download_notification_channel_name">Download Notification</string>
 </resources>

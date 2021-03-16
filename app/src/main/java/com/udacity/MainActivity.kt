@@ -71,7 +71,7 @@ class MainActivity : AppCompatActivity() {
 
         createChannel(
             getString(R.string.file_downloaded_notification_channel_id),
-            "download"
+            getString(R.string.download_notification_channel_name)
         )
     }
 
@@ -134,8 +134,8 @@ class MainActivity : AppCompatActivity() {
     private fun createChannel(channelId: String, channelName: String) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val notificationChannel = NotificationChannel(
-                channelId,
-                channelName,
+                getString(R.string.file_downloaded_notification_channel_id),
+                "download",
                 NotificationManager.IMPORTANCE_HIGH
             )
                 .apply {

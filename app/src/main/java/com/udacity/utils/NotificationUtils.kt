@@ -1,9 +1,13 @@
 package com.udacity.utils
 
+import android.annotation.TargetApi
+import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
+import android.os.Build
+import androidx.annotation.RequiresApi
 import androidx.core.app.NotificationCompat
 import com.udacity.DetailActivity
 import com.udacity.R
@@ -36,10 +40,7 @@ fun NotificationManager.sendNotification(
 
     val builder = NotificationCompat.Builder(
         applicationContext,
-        String.format(
-            applicationContext.getString(R.string.file_downloaded_notification_channel_id),
-            fileName
-        )
+        applicationContext.getString(R.string.file_downloaded_notification_channel_id)
     )
         .setContentTitle(applicationContext.getString(R.string.notification_title))
         .setContentText(messageBody)
