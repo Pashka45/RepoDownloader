@@ -108,7 +108,7 @@ class MainActivity : AppCompatActivity() {
             DownloadManager.Request(Uri.parse(url))
                 .setTitle(getString(R.string.app_name))
                 .setDescription(getString(R.string.app_description))
-                .setRequiresCharging(true)
+                .setRequiresCharging(false)
                 .setAllowedOverMetered(false)
                 .setAllowedOverRoaming(false)
 
@@ -134,8 +134,8 @@ class MainActivity : AppCompatActivity() {
     private fun createChannel(channelId: String, channelName: String) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val notificationChannel = NotificationChannel(
-                getString(R.string.file_downloaded_notification_channel_id),
-                "download",
+                channelId,
+                channelName,
                 NotificationManager.IMPORTANCE_HIGH
             )
                 .apply {
